@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Letter for Hanann</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka:wght@400;500;600&family=Caveat:wght@500;600&display=swap');
+*{box-sizing:border-box}
+:root{--ink:#715665;--pink:#d77da8;--pink-soft:#f8dce9;--cream:#fffaf1;--blue:#dceeff;--mint:#e1f2e5}
+body{margin:0;min-height:100vh;padding:22px;font-family:Nunito,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 12%,#ffe7f1 0 8%,transparent 9%),radial-gradient(circle at 90% 85%,#dff1ff 0 10%,transparent 11%),linear-gradient(135deg,#fff8ec,#ffedf5 55%,#eff8ff);display:flex;flex-direction:column;align-items:center}
+nav{width:min(100%,900px);display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 4px 18px;font-weight:800;font-size:14px}
+nav .brand{font-family:Fredoka,sans-serif;color:#c76d99;font-size:20px}
+nav a{color:var(--ink);text-decoration:none;padding:8px 12px;border-radius:12px}nav a:hover{background:#ffffffa8}
+main{width:min(100%,700px);margin:auto;text-align:center;padding:10px 0 26px}
+.kicker{font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#b88ba3;margin:8px 0}
+h1{font-family:Fredoka,sans-serif;font-size:clamp(30px,7vw,43px);color:#cb76a0;margin:6px 0 22px}
+.envelope{position:relative;margin:0 auto 20px;width:min(100%,560px);min-height:270px;border-radius:22px;background:#f7d8e7;box-shadow:0 16px 38px #bc8da322;overflow:hidden;display:grid;place-items:center;padding:24px;border:2px solid #fff}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 49.7%,#e9bfd5 50%,transparent 50.3%),linear-gradient(45deg,transparent 49.7%,#e9bfd5 50%,transparent 50.3%);opacity:.55}
+.seal{position:relative;z-index:1;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:#fff8fb;color:#d27ea7;font-size:28px;box-shadow:0 5px 18px #c68da922}
+.letter{display:none;text-align:left;position:relative;width:min(100%,600px);margin:0 auto;background:#fffdf8;border:1px solid #f1dfcf;border-radius:12px;padding:clamp(22px,5vw,38px);box-shadow:0 12px 30px #b68c9e18;transform-origin:top center;animation:open .5s ease both}
+.letter.show{display:block}
+@keyframes open{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.letter:after{content:"";position:absolute;inset:10px;border:1px dashed #ead9c9;border-radius:7px;pointer-events:none}
+.letter h2{font-family:Caveat,cursive;font-size:34px;color:#c8799d;margin:0 0 14px;position:relative;z-index:1}
+.letter p{font-size:16px;line-height:1.85;margin:0 0 14px;position:relative;z-index:1}
+.sign{font-family:Caveat,cursive;font-size:26px;color:#c8799d;margin-top:20px;position:relative;z-index:1}
+.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0}
+.btn{border:0;border-radius:15px;padding:13px 19px;font:800 15px Nunito,sans-serif;cursor:pointer;transition:transform .16s,filter .16s;text-decoration:none;display:inline-flex;justify-content:center;align-items:center}
+.btn:hover{transform:translateY(-2px);filter:brightness(.98)}.primary{background:#dc88b1;color:#fff}.secondary{background:#fff;color:#9d6c88;border:1px solid #efd3e1}.next{background:#b8d9f3;color:#4d6d8b}
+#hint{min-height:22px;color:#ad8199;font-size:13px;font-weight:700}
+.decor{position:fixed;pointer-events:none;user-select:none;color:#dca2bf;opacity:.55;animation:float 5s ease-in-out infinite;font-size:22px}.d1{left:8%;top:23%}.d2{right:9%;top:17%;animation-delay:1.2s;color:#91badb}.d3{left:12%;bottom:14%;animation-delay:2s;color:#d6b879}.d4{right:13%;bottom:16%;animation-delay:.7s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-11px) rotate(6deg)}}
+@media(max-width:480px){body{padding:14px}nav{font-size:12px;flex-wrap:wrap}nav .brand{width:100%;text-align:center}.envelope{min-height:220px}.letter p{font-size:15px}.controls .btn{flex:1 1 145px}}
+</style>
+</head>
+<body>
+<span class="decor d1" aria-hidden="true">♡</span><span class="decor d2" aria-hidden="true">✦</span><span class="decor d3" aria-hidden="true">✧</span><span class="decor d4" aria-hidden="true">♡</span>
+<nav><span class="brand">our little space</span><div><a href="index.html">Home</a><a href="games.html">Games</a><a href="wishes.html">Wishes</a><a href="voice.html">Voice</a></div></nav>
+<main>
+<p class="kicker">a little something from me</p>
+<h1>A Letter for Hanann</h1>
+<div class="envelope" id="envelope"><div class="seal" aria-hidden="true">♡</div></div>
+<div class="letter" id="letter" aria-live="polite">
+<h2>Dear Hanann,</h2>
+<p>Aku tau aku bukan kawan yang baik. Aku selalu termarah hang. Aku mintak maaf okey.. </p>
+<p>Aku akan selalu ingat hang sebagai kawan aku. Yala, hanan ja yang duk dengaq pasai hidup aku</p>
+<p>Aku harap one day hang akan jadi a succesful person ! Kita capai impian kita sama sama tau</p>
+<p>Dan, kalau one day hang dah takmau kawan dengan aku, aku nak hang simpan semua aib aku.. Loveyouuu</p>
+<div class="sign">— from ari !</div>
+</div>
+<div class="controls"><button class="btn primary" id="openBtn" type="button">Open my letter</button><button class="btn secondary" id="closeBtn" type="button" hidden>Close letter</button><a class="btn secondary" href="games.html">← Back to Games</a><a class="btn next" href="voice.html">Next page →</a></div>
+<p id="hint" role="status"></p>
+</main>
+<script>
+const letter=document.getElementById('letter');const envelope=document.getElementById('envelope');const openBtn=document.getElementById('openBtn');const closeBtn=document.getElementById('closeBtn');const hint=document.getElementById('hint');
+openBtn.addEventListener('click',()=>{letter.classList.add('show');envelope.style.display='none';openBtn.hidden=true;closeBtn.hidden=false;hint.textContent='A little note, just for you.';letter.scrollIntoView({behavior:'smooth',block:'center'});});
+closeBtn.addEventListener('click',()=>{letter.classList.remove('show');envelope.style.display='grid';openBtn.hidden=false;closeBtn.hidden=true;hint.textContent='The letter is tucked away again.';});
+</script>
+</body>
+</html>

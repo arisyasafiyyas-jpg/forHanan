@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Voice Note for Hanann</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 24px;
+      display: grid; place-items: center; overflow-x: hidden;
+      font-family: Nunito, sans-serif; color: #76586b;
+      background: radial-gradient(circle at 15% 12%, #ffe3ef 0, transparent 24%),
+                  radial-gradient(circle at 85% 88%, #dff2ff 0, transparent 25%),
+                  linear-gradient(135deg, #fff9ee, #fceaf4 52%, #edf7ff);
+    }
+    .decor { position: fixed; pointer-events: none; user-select: none; color: #dfa2c2; opacity: .6; animation: drift 6s ease-in-out infinite; }
+    .d1 { top: 9%; left: 8%; font-size: 26px; } .d2 { top: 17%; right: 10%; color: #9fc9e8; animation-delay: 1s; }
+    .d3 { bottom: 12%; left: 12%; color: #e4c579; animation-delay: 2s; font-size: 20px; } .d4 { bottom: 9%; right: 12%; font-size: 25px; animation-delay: .5s; }
+    @keyframes drift { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-12px) rotate(6deg); } }
+    .page { width: min(100%, 520px); }
+    .nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 0 0 18px; }
+    .nav a { text-decoration: none; color: #98788c; background: #ffffffb8; border: 1px solid #fff; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 800; }
+    .nav a.active { background: #e9c5dc; color: #714e66; }
+    .card { background: #ffffffc9; border: 2px solid #fff; border-radius: 30px; padding: clamp(24px, 6vw, 42px); text-align: center; box-shadow: 0 18px 48px #c49db51f; backdrop-filter: blur(8px); }
+    .eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #b18ba4; }
+    h1 { font: 600 clamp(29px, 7vw, 38px)/1.15 Fredoka, sans-serif; color: #cb78a3; margin: 8px 0; }
+    .sub { margin: 0 0 24px; line-height: 1.65; font-weight: 700; }
+    .cassette { width: 190px; max-width: 65%; margin: 0 auto 22px; padding: 18px 15px 14px; background: linear-gradient(140deg,#f8d6e7,#f4c8df); border: 3px solid #fff; border-radius: 20px; box-shadow: 0 10px 20px #c991b42b; transform: rotate(-3deg); }
+    .cassette-label { background: #fff7fb; border-radius: 12px; padding: 12px 8px; font: 600 23px Caveat, cursive; color: #bd719a; }
+    .tape-window { display: flex; align-items: center; justify-content: center; gap: 22px; margin: 10px 0 2px; }
+    .reel { width: 28px; height: 28px; border: 5px dotted #d58ab1; border-radius: 50%; background: #fbeaf3; }
+    .tape-line { height: 4px; width: 42px; background: #d58ab1; border-radius: 5px; }
+    .audio { width: 100%; display: none; }
+    .controls { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+    .play { width: 54px; height: 54px; flex: 0 0 54px; border: 0; border-radius: 50%; background: #df8eb7; color: white; font-size: 20px; cursor: pointer; box-shadow: 0 5px 13px #d28caf44; transition: transform .15s, background .15s; }
+    .play:hover { transform: scale(1.05); background: #d47ba8; }
+    .track { flex: 1; min-width: 0; }
+    input[type=range] { width: 100%; accent-color: #d982ad; cursor: pointer; }
+    .times { display: flex; justify-content: space-between; font-size: 12px; color: #a78a9b; font-weight: 700; }
+    #status { min-height: 22px; margin: 14px 0 0; font-size: 13px; color: #bd739a; font-weight: 800; }
+    .caption { margin: 16px 0 0; font: 500 21px Caveat, cursive; color: #a87e9a; }
+    .nav-buttons { display: flex; gap: 10px; margin-top: 18px; }
+    .btn { flex: 1; display: inline-block; text-decoration: none; padding: 13px 15px; border-radius: 15px; border: 0; font: 800 14px Nunito, sans-serif; text-align: center; cursor: pointer; }
+    .secondary { background: #fff; color: #98788c; border: 1px solid #f2dce9; }
+    .primary { background: #e18eb7; color: white; }
+    .foot { font-size: 12px; color: #b39aa9; margin-top: 16px; }
+    @media(max-width:420px) { body { padding: 16px; } .nav { gap: 5px; } .nav a { padding: 7px 11px; font-size: 12px; } .nav-buttons { flex-direction: column; } .cassette { max-width: 58%; } }
+  </style>
+</head>
+<body>
+  <span class="decor d1" aria-hidden="true">♡</span><span class="decor d2" aria-hidden="true">✦</span>
+  <span class="decor d3" aria-hidden="true">✧</span><span class="decor d4" aria-hidden="true">♡</span>
+  <main class="page">
+    <nav class="nav" aria-label="Page navigation">
+      <a href="index.html">Home</a><a href="games.html">Games</a><a href="wishes.html">Wishes</a><a class="active" href="voice.html">Voice</a>
+    </nav>
+    <section class="card">
+      <p class="eyebrow">A special voicenote from ari</p>
+      <h1>voicenote for hanan to listen</h1>
+      <p class="sub">saja buat voice, nanti aku takdak boleh dengaq selalu</p>
+      <div class="cassette" aria-hidden="true"><div class="cassette-label">by ari</div><div class="tape-window"><span class="reel"></span><span class="tape-line"></span><span class="reel"></span></div></div>
+      <audio id="voice-audio" src="voice1.mp3" preload="metadata"></audio>
+      <div class="controls">
+        <button class="play" id="play-btn" type="button" aria-label="Play voice note">▶</button>
+        <div class="track"><input id="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Audio progress"><div class="times"><span id="current-time">0:00</span><span id="duration">0:00</span></div></div>
+      </div>
+      <p id="status" role="status" aria-live="polite">Your voice note will be here ♡</p>
+      <p class="caption">listen whenever you feel like it</p>
+      <div class="nav-buttons"><a class="btn secondary" href="wishes.html">← Back to letter</a><a class="btn primary" href="index.html">Finish · Home</a></div>
+      <p class="foot">specially made by ari yang gemesh, imut</p>
+    </section>
+  </main>
+  <script>
+    const audio = document.getElementById('voice-audio');
+    const playBtn = document.getElementById('play-btn');
+    const progress = document.getElementById('progress');
+    const currentTimeText = document.getElementById('current-time');
+    const durationText = document.getElementById('duration');
+    const status = document.getElementById('status');
+    function timeFormat(value) { if (!Number.isFinite(value)) return '0:00'; const m = Math.floor(value / 60); const s = Math.floor(value % 60).toString().padStart(2, '0'); return `${m}:${s}`; }
+    playBtn.addEventListener('click', async () => {
+      if (!audio.src || audio.error) { status.textContent = 'Add your voice note file: audio/voice1.mp3'; return; }
+      if (audio.paused) { try { await audio.play(); } catch { status.textContent = 'Audio file not found. Add audio/voice1.mp3 first.'; } }
+      else audio.pause();
+    });
+    audio.addEventListener('play', () => { playBtn.textContent = '❚❚'; playBtn.setAttribute('aria-label','Pause voice note'); status.textContent = 'Playing your voice note…'; });
+    audio.addEventListener('pause', () => { playBtn.textContent = '▶'; playBtn.setAttribute('aria-label','Play voice note'); if (!audio.ended) status.textContent = 'Paused'; });
+    audio.addEventListener('loadedmetadata', () => { durationText.textContent = timeFormat(audio.duration); });
+    audio.addEventListener('timeupdate', () => { currentTimeText.textContent = timeFormat(audio.currentTime); if (audio.duration) progress.value = (audio.currentTime / audio.duration) * 100; });
+    progress.addEventListener('input', () => { if (audio.duration) audio.currentTime = (Number(progress.value) / 100) * audio.duration; });
+    audio.addEventListener('ended', () => { playBtn.textContent = '▶'; playBtn.setAttribute('aria-label','Play voice note'); progress.value = 0; currentTimeText.textContent = '0:00'; status.textContent = 'That was your voice note ♡'; });
+    audio.addEventListener('error', () => { status.textContent = 'Add your voice note file at audio/voice1.mp3'; });
+  </script>
+</body>
+</html>

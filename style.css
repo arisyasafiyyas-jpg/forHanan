@@ -1,0 +1,2315 @@
+
+/* =========================================
+   LITTLE CORNER ♡
+   MAIN STYLESHEET
+   ========================================= */
+
+
+/* =========================================
+   1. GLOBAL SETTINGS
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Caveat:wght@500;700&display=swap');
+
+:root {
+    --pink: #f4bfd7;
+    --pink-dark: #df8fb4;
+    --pink-light: #fff0f6;
+
+    --blue: #c8e4fa;
+    --blue-dark: #80acd9;
+    --blue-light: #eef7ff;
+
+    --yellow: #fff0b8;
+    --yellow-dark: #dfb74c;
+    --yellow-light: #fffdf0;
+
+    --green: #d9f0d4;
+    --green-dark: #85bd82;
+
+    --purple: #e8d8f5;
+    --purple-dark: #ad91c4;
+
+    --cream: #fffaf2;
+    --white: #ffffff;
+
+    --text: #65536f;
+    --text-light: #95849e;
+
+    --border: #f3e5e9;
+
+    --shadow:
+        0 12px 35px rgba(150, 110, 140, 0.09);
+
+    --radius: 25px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+::selection {
+    background: var(--pink);
+    color: var(--text);
+}
+
+
+/* =========================================
+   2. BACKGROUND DECORATIONS
+   ========================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.floating {
+    position: absolute;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+
+.f1 {
+    top: 10%;
+    left: 8%;
+    font-size: 45px;
+}
+
+
+.f2 {
+    top: 20%;
+    right: 10%;
+    font-size: 35px;
+    animation-delay: 1s;
+}
+
+
+.f3 {
+    bottom: 15%;
+    left: 12%;
+    font-size: 40px;
+    animation-delay: 2s;
+}
+
+
+.f4 {
+    bottom: 10%;
+    right: 8%;
+    font-size: 50px;
+    animation-delay: 0.5s;
+}
+
+
+.f5 {
+    top: 50%;
+    left: 3%;
+    font-size: 25px;
+    animation-delay: 1.5s;
+}
+
+
+.f6 {
+    top: 60%;
+    right: 4%;
+    font-size: 28px;
+    animation-delay: 2.5s;
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(8deg);
+    }
+
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+   ========================================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background: rgba(255,255,255,0.93);
+
+    border-bottom: 2px solid var(--border);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(12px);
+}
+
+
+.logo {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--pink-dark);
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.nav-links a {
+    color: #766780;
+    font-weight: 800;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: var(--pink-dark);
+    transform: translateY(-2px);
+}
+
+
+.nav-links a.active {
+    color: var(--pink-dark);
+}
+
+
+/* =========================================
+   4. PAGE CONTAINERS
+   ========================================= */
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+.content-container {
+    max-width: 950px;
+    width: 100%;
+
+    margin: auto;
+
+    padding: 30px 20px 70px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.section {
+    padding: 60px 20px;
+}
+
+
+.center {
+    text-align: center;
+}
+
+
+/* =========================================
+   5. CARDS
+   ========================================= */
+
+.card {
+    background: rgba(255,255,255,0.94);
+
+    border: 3px solid #ffe3ed;
+
+    border-radius: 35px;
+
+    padding: 40px 30px;
+
+    box-shadow: var(--shadow);
+
+    transition: 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+
+.game {
+    background: var(--white);
+
+    border: 2px solid var(--border);
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.game-card {
+    background: white;
+
+    border: 2px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    transition: 0.3s;
+}
+
+
+.game-card:hover {
+    transform: translateY(-6px) rotate(-1deg);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================
+   6. HEADINGS & TEXT
+   ========================================= */
+
+h1,
+h2,
+h3 {
+    font-family: 'Fredoka', sans-serif;
+}
+
+
+h1 {
+    font-size: clamp(35px, 6vw, 60px);
+    color: var(--pink-dark);
+    line-height: 1.2;
+}
+
+
+h2 {
+    font-size: 30px;
+}
+
+
+h3 {
+    font-size: 23px;
+}
+
+
+.small-title {
+    font-family: 'Caveat', cursive;
+    color: var(--pink-dark);
+    font-size: 27px;
+}
+
+
+.description {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+.subtitle {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+
+.tag {
+    display: inline-block;
+
+    background: var(--pink-light);
+
+    color: var(--pink-dark);
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+
+.pink {
+    color: var(--pink-dark);
+}
+
+
+.blue {
+    color: var(--blue-dark);
+}
+
+
+.yellow {
+    color: var(--yellow-dark);
+}
+
+
+.purple {
+    color: var(--purple-dark);
+}
+
+
+.green {
+    color: var(--green-dark);
+}
+
+
+/* =========================================
+   7. BUTTONS
+   ========================================= */
+
+.main-btn,
+.unlock-btn,
+.enter-btn {
+    display: inline-block;
+
+    background: var(--pink);
+
+    color: #79516a;
+
+    padding: 14px 25px;
+
+    border-radius: 16px;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    margin-top: 15px;
+
+    box-shadow: 0 5px 0 #e8a6c4;
+
+    transition: 0.2s;
+}
+
+
+.main-btn:hover,
+.unlock-btn:hover {
+    transform: translateY(-3px);
+
+    background: #f2aaca;
+
+    box-shadow: 0 7px 0 #e8a6c4;
+}
+
+
+.main-btn:active,
+.unlock-btn:active {
+    transform: translateY(2px);
+
+    box-shadow: 0 2px 0 #e8a6c4;
+}
+
+
+.blue-btn {
+    background: var(--blue);
+    color: #567c9d;
+    box-shadow: 0 5px 0 #a1cce9;
+}
+
+
+.blue-btn:hover {
+    background: #acd9f6;
+}
+
+
+.yellow-btn {
+    background: var(--yellow);
+    color: #8b7746;
+    box-shadow: 0 5px 0 #e8d38c;
+}
+
+
+.green-btn {
+    background: var(--green);
+    color: #567b52;
+    box-shadow: 0 5px 0 #b5dcb0;
+}
+
+
+.purple-btn {
+    background: var(--purple);
+    color: #79628b;
+    box-shadow: 0 5px 0 #cfb9e2;
+}
+
+
+.hint-btn,
+.restart-btn {
+    background: transparent;
+    color: #b49abf;
+
+    font-weight: 800;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+
+.hint-btn:hover,
+.restart-btn:hover {
+    color: var(--pink-dark);
+}
+
+
+/* =========================================
+   8. PASSWORD PAGE
+   ========================================= */
+
+.password-label {
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+
+    color: #927d9d;
+}
+
+
+.password-wrapper {
+    display: flex;
+
+    background: #fff7fb;
+
+    border: 2px solid #f4dce8;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+
+.password-wrapper:focus-within {
+    border-color: #e9a7c5;
+
+    box-shadow:
+        0 0 0 4px rgba(233,167,197,0.15);
+}
+
+
+.password-wrapper input {
+    flex: 1;
+
+    width: 100%;
+
+    min-width: 0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    padding: 16px;
+
+    font-size: 15px;
+
+    color: var(--text);
+}
+
+
+.password-wrapper input::placeholder {
+    color: #c4b5cb;
+}
+
+
+.show-btn {
+    background: transparent;
+
+    padding: 0 15px;
+
+    color: #d18eae;
+
+    font-weight: 800;
+
+    font-size: 12px;
+}
+
+
+.hint-box {
+    display: none;
+
+    background: #fff6df;
+
+    color: #a48b54;
+
+    padding: 13px;
+
+    margin-top: 15px;
+
+    border-radius: 14px;
+
+    font-size: 13px;
+
+    animation: fadeIn 0.4s;
+}
+
+
+.message {
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    color: var(--pink-dark);
+}
+
+
+.success-screen {
+    display: none;
+
+    animation: fadeIn 0.7s;
+}
+
+
+.success-emoji {
+    font-size: 85px;
+
+    animation: bounce 1s infinite;
+}
+
+
+.success-text {
+    color: var(--text-light);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    margin: 15px 0 25px;
+}
+
+
+/* =========================================
+   9. HERO SECTION
+   ========================================= */
+
+.hero {
+    text-align: center;
+
+    padding: 65px 20px 35px;
+}
+
+
+.hero h1 {
+    margin-bottom: 12px;
+}
+
+
+.hero p {
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: var(--text-light);
+}
+
+
+.hero .decoration {
+    font-size: 30px;
+
+    margin-top: 15px;
+
+    animation: float 2s infinite ease-in-out;
+}
+
+
+.envelope {
+    font-size: 85px;
+
+    display: inline-block;
+
+    animation: envelopeFloat 2.5s infinite ease-in-out;
+
+    margin-bottom: 15px;
+}
+
+
+@keyframes envelopeFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+
+}
+
+
+/* =========================================
+   10. GAME MENU
+   ========================================= */
+
+.game-menu {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin: 20px auto 35px;
+
+    padding: 0 15px;
+}
+
+
+.menu-btn {
+    background: white;
+
+    border: 2px solid var(--border);
+
+    padding: 12px 20px;
+
+    border-radius: 50px;
+
+    color: #766780;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+
+.menu-btn:hover {
+    transform: translateY(-3px);
+
+    background: var(--pink-light);
+}
+
+
+/* =========================================
+   11. QUIZ
+   ========================================= */
+
+.quiz-box {
+    background: #fff7fb;
+
+    padding: 25px;
+
+    border-radius: 22px;
+}
+
+
+.quiz-progress {
+    color: #d58baa;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+
+.question {
+    font-family: 'Fredoka', sans-serif;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+
+.answers {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.answer-btn {
+    background: white;
+
+    border: 2px solid #f3dce7;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    font-weight: 800;
+
+    color: #766780;
+
+    transition: 0.2s;
+}
+
+
+.answer-btn:hover:not(:disabled) {
+    background: #ffe9f3;
+
+    transform: translateY(-2px);
+}
+
+
+.answer-btn:disabled {
+    cursor: default;
+}
+
+
+.answer-btn.correct {
+    background: #ddf5dc;
+
+    border-color: #a9d8a5;
+}
+
+
+.answer-btn.wrong {
+    background: #ffe0e0;
+
+    border-color: #f3b3b3;
+}
+
+
+.quiz-feedback {
+    margin-top: 18px;
+
+    font-weight: 800;
+
+    min-height: 24px;
+}
+
+
+/* =========================================
+   12. CATCH THE STAR
+   ========================================= */
+
+.catch-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    background: var(--blue-light);
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    font-weight: 800;
+
+    color: #729ac3;
+
+    margin-bottom: 15px;
+}
+
+
+.catch-area {
+    position: relative;
+
+    height: 300px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background: #eaf5ff;
+
+    border: 2px dashed #c9e2ff;
+}
+
+
+#star {
+    position: absolute;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    display: none;
+
+    transition:
+        top 0.12s,
+        left 0.12s;
+
+    animation: starspin 2s infinite linear;
+
+    background: transparent;
+}
+
+
+@keyframes starspin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+#catch-message {
+    margin-top: 15px;
+
+    font-weight: 800;
+
+    color: var(--blue-dark);
+}
+
+
+/* =========================================
+   13. THIS OR THAT
+   ========================================= */
+
+.choice-box {
+    background: var(--yellow-light);
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    text-align: center;
+}
+
+
+.choice-question {
+    font-family: 'Fredoka', sans-serif;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.choice-options {
+    display: flex;
+
+    gap: 15px;
+
+    justify-content: center;
+
+    align-items: stretch;
+}
+
+
+.choice-btn {
+    flex: 1;
+
+    max-width: 300px;
+
+    background: white;
+
+    border: 2px solid #f4e7b7;
+
+    border-radius: 20px;
+
+    padding: 25px 15px;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #8b7746;
+
+    transition: 0.3s;
+}
+
+
+.choice-btn:hover {
+    background: #fff2bd;
+
+    transform: rotate(-2deg) scale(1.04);
+}
+
+
+.or {
+    font-family: 'Caveat', cursive;
+
+    font-size: 27px;
+
+    color: #e3b650;
+
+    align-self: center;
+}
+
+
+.choice-feedback {
+    margin-top: 20px;
+
+    font-weight: 800;
+
+    color: #d6a83f;
+}
+
+
+/* =========================================
+   14. WISHES & LETTERS
+   ========================================= */
+
+.letter {
+    background: #fffdf8;
+
+    border: 2px solid #f5e7cf;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    box-shadow: var(--shadow);
+
+    line-height: 2;
+}
+
+
+.letter p {
+    margin-bottom: 15px;
+}
+
+
+.letter-title {
+    font-family: 'Caveat', cursive;
+
+    font-size: 35px;
+
+    color: var(--pink-dark);
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+.wish-card {
+    background: white;
+
+    border: 2px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+
+.wish-card:hover {
+    transform: translateY(-5px) rotate(1deg);
+
+    box-shadow: var(--shadow);
+}
+
+
+.wish-card p {
+    line-height: 1.8;
+
+    color: var(--text-light);
+}
+
+
+.wish-card .emoji {
+    font-size: 40px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Flip cards */
+
+.flip-card {
+    perspective: 1000px;
+
+    min-height: 230px;
+
+    cursor: pointer;
+}
+
+
+.flip-card-inner {
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 230px;
+
+    transition: transform 0.7s;
+
+    transform-style: preserve-3d;
+}
+
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.flip-front,
+.flip-back {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    backface-visibility: hidden;
+
+    text-align: center;
+}
+
+
+.flip-front {
+    background: var(--pink-light);
+
+    color: var(--pink-dark);
+}
+
+
+.flip-back {
+    background: var(--blue-light);
+
+    transform: rotateY(180deg);
+
+    color: var(--blue-dark);
+}
+
+
+/* Envelope */
+
+.envelope-box {
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+
+.envelope-box:hover {
+    transform: translateY(-5px);
+}
+
+
+.envelope-image {
+    font-size: 100px;
+
+    transition: 0.3s;
+}
+
+
+.envelope-box.open .envelope-image {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+
+/* =========================================
+   15. VOICE PAGE
+   ========================================= */
+
+.voice-card {
+    background: white;
+
+    border: 2px solid #e8ddf5;
+
+    border-radius: 30px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+
+.voice-icon {
+    font-size: 75px;
+
+    margin-bottom: 15px;
+}
+
+
+.audio-player {
+    background: #f8f1ff;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    margin-top: 20px;
+}
+
+
+.audio-player audio {
+    width: 100%;
+}
+
+
+.waveform {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    height: 65px;
+}
+
+
+.waveform span {
+    width: 6px;
+
+    height: 15px;
+
+    background: #c6a8e0;
+
+    border-radius: 10px;
+}
+
+
+.waveform.playing span {
+    animation: wave 0.7s infinite ease-in-out;
+}
+
+
+.waveform span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+
+.waveform span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+
+.waveform span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+
+.waveform span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+
+.waveform span:nth-child(6) {
+    animation-delay: 0.2s;
+}
+
+
+.waveform span:nth-child(7) {
+    animation-delay: 0.1s;
+}
+
+
+@keyframes wave {
+
+    0%, 100% {
+        height: 12px;
+    }
+
+    50% {
+        height: 45px;
+    }
+
+}
+
+
+/* =========================================
+   16. PHOTO / MEMORY GALLERY
+   ========================================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.photo-card {
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow);
+
+    transform: rotate(-2deg);
+
+    transition: 0.3s;
+}
+
+
+.photo-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+
+.photo-card:hover {
+    transform: rotate(0deg) scale(1.04);
+
+    z-index: 2;
+}
+
+
+.photo-card img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+.photo-caption {
+    font-family: 'Caveat', cursive;
+
+    font-size: 22px;
+
+    text-align: center;
+
+    padding-top: 10px;
+
+    color: #a58aa8;
+}
+
+
+/* =========================================
+   17. FOOTER
+   ========================================= */
+
+footer,
+.footer {
+    text-align: center;
+
+    padding: 30px 15px;
+
+    color: #c98ba7;
+
+    font-family: 'Caveat', cursive;
+
+    font-size: 23px;
+}
+
+
+footer {
+    background: var(--pink-light);
+}
+
+
+/* =========================================
+   18. CONFETTI
+   ========================================= */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    z-index: 999;
+
+    pointer-events: none;
+
+    animation: fall 3s linear forwards;
+}
+
+
+@keyframes fall {
+
+    to {
+        transform: translateY(110vh) rotate(720deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   19. ANIMATIONS
+   ========================================= */
+
+.shake {
+    animation: shake 0.4s;
+}
+
+
+@keyframes shake {
+
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    20%, 60% {
+        transform: translateX(-8px);
+    }
+
+    40%, 80% {
+        transform: translateX(8px);
+    }
+
+}
+
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+.fade-in {
+    animation: fadeIn 0.7s ease forwards;
+}
+
+
+/* =========================================
+   20. RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 16px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        padding: 30px 22px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 45px 15px 25px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .game {
+        padding: 20px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    .choice-options {
+        flex-direction: column;
+    }
+
+    .choice-btn {
+        max-width: 100%;
+    }
+
+    .or {
+        font-size: 20px;
+    }
+
+    .catch-area {
+        height: 250px;
+    }
+
+    .letter {
+        padding: 22px;
+    }
+
+    .voice-card {
+        padding: 22px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================
+   21. ACCESSIBILITY
+   ========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #d9b4ec;
+
+    outline-offset: 4px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}
+/* =================================
+   WISHES PAGE
+================================= */
+
+.main-letter-card {
+    text-align: center;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 35px 20px;
+    overflow: hidden;
+}
+
+.envelope-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 10px 30px;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-5px);
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #f5b8d1;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.letter-paper {
+    position: absolute;
+    width: 90%;
+    height: 270px;
+    left: 5%;
+    bottom: 10px;
+    background: #fffdf5;
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+
+    transform: translateY(0);
+    transition: transform 0.8s ease;
+
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.letter-content {
+    text-align: left;
+    color: #777;
+    line-height: 1.8;
+}
+
+.letter-content h2 {
+    color: #e17ba8;
+    font-family: "Caveat", cursive;
+    font-size: 30px;
+}
+
+.letter-signature {
+    font-family: "Caveat", cursive;
+    font-size: 25px;
+    color: #e17ba8;
+    text-align: right;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #f8c9dd;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 65%
+    );
+
+    transform-origin: top;
+    transition: transform 0.6s ease;
+
+    z-index: 4;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+
+    background: #f3a9c9;
+
+    clip-path: polygon(
+        0 0,
+        50% 55%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope-heart {
+    font-size: 35px;
+    margin-top: 65px;
+    transition: transform 0.3s;
+}
+
+.envelope:hover .envelope-heart {
+    transform: scale(1.2);
+}
+
+/* Open envelope */
+
+.envelope.opened .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.envelope.opened .letter-paper {
+    transform: translateY(-150px);
+    z-index: 5;
+}
+
+.envelope.opened .envelope-front {
+    z-index: 3;
+}
+
+.envelope-instruction {
+    margin-top: 15px;
+    color: #b17c96;
+}
+
+
+/* =================================
+   RANDOM WISH
+================================= */
+
+.random-wish-card {
+    text-align: center;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 35px 25px;
+    background: #fff7fb;
+}
+
+.wish-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.random-wish-display {
+    min-height: 110px;
+
+    margin: 25px 0;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 2px dashed #f3c3d9;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.random-wish-display p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #777;
+}
+
+.wish-sparkle {
+    font-size: 20px;
+}
+
+.wish-animate {
+    animation: wishAppear 0.5s ease;
+}
+
+@keyframes wishAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =================================
+   WISH FLIP CARDS
+================================= */
+
+.wishes-section {
+    margin: 50px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading p {
+    color: #999;
+}
+
+.wish-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    max-width: 950px;
+
+    margin: auto;
+}
+
+.wish-flip-card {
+    height: 230px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.wish-flip-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.7s ease;
+}
+
+.wish-flip-card.flipped .wish-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.wish-card-front,
+.wish-card-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    padding: 25px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    backface-visibility: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+
+.wish-card-front {
+    background: #fff5fa;
+    border: 2px solid #f6d5e5;
+}
+
+.wish-card-front span {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.wish-card-front h3 {
+    color: #d878a2;
+    margin: 5px 0;
+}
+
+.wish-card-front p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.wish-card-back {
+    background: #fffdf1;
+    border: 2px solid #f2e4b6;
+
+    transform: rotateY(180deg);
+
+    color: #777;
+
+    line-height: 1.7;
+}
+
+.wish-flip-card:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =================================
+   ENDING SECTION
+================================= */
+
+.wishes-ending {
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    background: #f2f8ff;
+}
+
+.ending-icon {
+    font-size: 45px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 750px) {
+
+    .wish-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .wish-flip-card {
+        height: 210px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .wish-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wish-flip-card {
+        height: 190px;
+    }
+
+    .envelope {
+        width: 260px;
+        height: 175px;
+    }
+
+    .letter-paper {
+        height: 250px;
+    }
+
+    .envelope.opened .letter-paper {
+        transform: translateY(-130px);
+    }
+
+    .main-letter-card {
+        padding: 25px 12px;
+    }
+
+}
+/* ==============================
+   VOICE PLAYLIST PAGE
+============================== */
+
+.audio-page-card {
+    max-width: 480px;
+    margin: 30px auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.audio-cover {
+    width: 230px;
+    height: 230px;
+    margin: 0 auto 25px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd9e9,
+        #dceaff,
+        #fff0c7
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 25px rgba(220, 160, 190, 0.2);
+}
+
+.cover-main-icon {
+    font-size: 85px;
+    z-index: 2;
+    animation: coverFloat 3s ease-in-out infinite;
+}
+
+@keyframes coverFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.cover-decor {
+    position: absolute;
+    font-size: 28px;
+}
+
+.decor-1 {
+    top: 20px;
+    left: 20px;
+}
+
+.decor-2 {
+    top: 25px;
+    right: 20px;
+}
+
+.decor-3 {
+    bottom: 20px;
+    left: 20px;
+}
+
+.audio-info {
+    margin-bottom: 25px;
+}
+
+.audio-label {
+    color: #d78aaa;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.audio-info h2 {
+    margin: 10px 0;
+    color: #d878a2;
+}
+
+.audio-info p {
+    color: #999;
+}
+
+
+/* Progress bar */
+
+.audio-progress-container {
+    margin: 20px 0;
+}
+
+#audio-progress {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    accent-color: #e68bb5;
+}
+
+.audio-time {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    color: #999;
+
+    margin-top: 8px;
+}
+
+
+/* Player buttons */
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+.audio-control-btn {
+    border: none;
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    color: #d78aaa;
+
+    transition: transform 0.2s;
+}
+
+.audio-control-btn:hover {
+    transform: scale(1.15);
+}
+
+.audio-play-btn {
+    width: 65px;
+    height: 65px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #f5aaca,
+        #c8dfff
+    );
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(220, 160, 190, 0.25);
+
+    transition: transform 0.2s;
+}
+
+.audio-play-btn:hover {
+    transform: scale(1.08);
+}
+
+.audio-status {
+    font-size: 13px;
+    color: #b28ba0;
+}
+
+
+/* Playlist */
+
+.playlist-section {
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.playlist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    background: white;
+
+    border: 2px solid #f5e5ed;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.playlist-item:hover {
+    transform: translateY(-3px);
+    background: #fff8fc;
+}
+
+.playlist-item.active {
+    border-color: #e8a6c5;
+    background: #fff2f9;
+}
+
+.playlist-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: #fff0f7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.playlist-text {
+    flex: 1;
+    text-align: left;
+}
+
+.playlist-text h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #d47ea4;
+}
+
+.playlist-text p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.playlist-play {
+    color: #d78aaa;
+    font-size: 18px;
+}
+
+
+/* Ending */
+
+.voice-bottom-message {
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+
+    background: #fffaf0;
+}
+
+.voice-bottom-message > span {
+    font-size: 45px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .audio-page-card {
+        padding: 25px 18px;
+    }
+
+    .audio-cover {
+        width: 190px;
+        height: 190px;
+    }
+
+    .cover-main-icon {
+        font-size: 70px;
+    }
+
+    .audio-controls {
+        gap: 20px;
+    }
+
+    .playlist-item {
+        padding: 12px;
+    }
+
+}
