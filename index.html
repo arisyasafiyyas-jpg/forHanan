@@ -1,139 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>a little something for you ♡</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Kalam:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Surprise for Hanann</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka:wght@400;500;600&display=swap');
+    * { box-sizing: border-box; }
+    :root { --pink:#ff8fbd; --soft-pink:#ffb9d5; --red:#ff537d; --cream:#fff3f8; }
+    body { margin:0; min-height:100vh; overflow:hidden; font-family:'Nunito',sans-serif; color:var(--cream); background:#09070d; }
+    .screen { position:fixed; inset:0; display:grid; place-items:center; padding:24px; opacity:1; visibility:visible; transition:opacity .7s ease, visibility .7s; }
+    .screen.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+    /* Password screen */
+    #entry { background:radial-gradient(circle at 15% 18%,#ffe3ef 0 8%,transparent 9%),radial-gradient(circle at 88% 82%,#dff3ff 0 10%,transparent 11%),linear-gradient(135deg,#fff8ed,#ffeaf4 55%,#edf7ff); color:#684b5b; }
+    .decor { position:fixed; color:#e9a8c6; opacity:.65; font-size:24px; animation:float 5s ease-in-out infinite; user-select:none; pointer-events:none; }
+    .decor.one{top:12%;left:12%}.decor.two{top:18%;right:13%;animation-delay:1.2s;font-size:17px;color:#9fcce9}.decor.three{bottom:15%;left:16%;animation-delay:2s;font-size:19px;color:#e7c77e}.decor.four{bottom:12%;right:17%;animation-delay:.6s}
+    @keyframes float { 0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(7deg)} }
+    .entry-card { width:min(100%,460px); padding:clamp(28px,6vw,46px); text-align:center; border:2px solid rgba(255,255,255,.9); border-radius:30px; background:rgba(255,255,255,.78); box-shadow:0 18px 45px rgba(185,137,166,.18); backdrop-filter:blur(8px); }
+    .sticker { display:inline-grid; place-items:center; width:76px;height:76px;margin-bottom:16px;border-radius:24px;background:#ffe2ef;font-size:34px;transform:rotate(-6deg); }
+    h1 { margin:0 0 12px;font-family:'Fredoka',sans-serif;font-size:clamp(27px,7vw,36px);line-height:1.15;color:#cc6e9c; }
+    .message { margin:0 auto 22px;max-width:330px;line-height:1.7;font-size:16px;font-weight:800; }
+    .hint { margin:0 0 9px;font-size:13px;color:#98788a; }
+    input { width:100%;padding:15px 16px;border:2px solid #f2c8dc;border-radius:16px;background:#fffdfd;outline:none;font:inherit;color:#684b5b;text-align:center;letter-spacing:1px;transition:border .2s,box-shadow .2s; }
+    input:focus { border-color:#d986b0;box-shadow:0 0 0 4px #fbe5f0; }
+    .button { display:block;width:100%;margin-top:13px;padding:14px 18px;border:0;border-radius:16px;background:#e78db7;color:white;font:800 16px 'Nunito',sans-serif;cursor:pointer;transition:transform .15s,background .2s,opacity .2s; }
+    .button:hover { transform:translateY(-2px);background:#d976a7; }
+    .button:disabled { cursor:not-allowed;opacity:.45;transform:none; }
+    #feedback { min-height:24px;margin:12px 0 0;font-size:14px;font-weight:800;color:#c96d98; }
+    .small-note { margin-top:16px;color:#ad91a0;font-size:12px; }
+    /* Love screen */
+    #love-screen { background:radial-gradient(ellipse at 50% 45%,rgba(130,12,49,.25),transparent 50%),radial-gradient(circle at 20% 20%,rgba(255,65,125,.13),transparent 30%),radial-gradient(circle at 85% 78%,rgba(220,30,90,.11),transparent 35%),#08070b; }
+    .love-field { position:absolute;inset:0;overflow:hidden;pointer-events:none; }
+    .floating-word { position:absolute;white-space:nowrap;font-family:'Fredoka',sans-serif;font-weight:500;letter-spacing:.04em;color:var(--pink);text-shadow:0 0 12px rgba(255,90,150,.45);animation:drift var(--duration,12s) ease-in-out infinite alternate;animation-delay:var(--delay,0s);opacity:var(--opacity,.35);transform:rotate(var(--rotation,0deg)); }
+    @keyframes drift { 0%{translate:0 14px;rotate:-3deg;scale:.94}100%{translate:0 -22px;rotate:4deg;scale:1.05} }
+    .love-card { z-index:2;position:relative;width:min(92vw,440px);padding:clamp(28px,6vw,42px) 25px;text-align:center;border:1px solid rgba(255,160,195,.28);border-radius:28px;background:rgba(19,11,19,.76);box-shadow:0 0 45px rgba(255,48,112,.12),inset 0 0 35px rgba(255,75,130,.06);backdrop-filter:blur(10px);animation:cardAppear .8s ease both; }
+    @keyframes cardAppear { from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)} }
+    .heart-mark { color:#ff6d9e;font-size:30px;display:block;margin-bottom:12px;text-shadow:0 0 18px rgba(255,78,135,.65);animation:heartPulse 2.4s ease-in-out infinite; }
+    @keyframes heartPulse { 0%,100%{transform:scale(1)}50%{transform:scale(1.12)} }
+    .love-card h2 { font-family:'Fredoka',sans-serif;font-size:clamp(34px,8vw,48px);color:#ff9fc6;margin:0 0 12px;text-shadow:0 0 20px rgba(255,89,145,.3); }
+    .love-card p { color:#f7d7e5;line-height:1.7;margin:0 auto 22px;max-width:330px;font-size:15px; }
+    .next-button { display:inline-flex;justify-content:center;align-items:center;gap:9px;width:min(100%,250px);padding:14px 20px;border:1px solid rgba(255,185,215,.45);border-radius:999px;background:linear-gradient(135deg,#ff6f9f,#d93b70);color:#fff;font:800 16px 'Nunito',sans-serif;text-decoration:none;box-shadow:0 8px 25px rgba(220,45,100,.25);transition:transform .2s,box-shadow .2s; }
+    .next-button:hover { transform:translateY(-3px);box-shadow:0 12px 30px rgba(220,45,100,.38); }
+    .tiny-note { margin-top:16px!important;font-size:12px!important;color:#c49aa9!important; }
+    @media(max-width:420px){.entry-card{padding:27px 22px}.floating-word{max-width:94vw;white-space:normal;text-align:center}.love-card{padding:28px 20px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  </style>
 </head>
-
-
 <body>
+  <section class="screen" id="entry" aria-label="Password entrance">
+    <span class="decor one" aria-hidden="true">♡</span><span class="decor two" aria-hidden="true">✦</span><span class="decor three" aria-hidden="true">✧</span><span class="decor four" aria-hidden="true">♡</span>
+    <main class="entry-card">
+      <div class="sticker" aria-hidden="true">✉</div>
+      <h1>HAI HANANN!</h1>
+      <p class="message">There's something for you !<br>Ha cuba teka password apaa hihi</p>
+      <p class="hint">Enter the secret password to unlock</p>
+      <form id="password-form">
+        <input id="password" type="password" placeholder="Secret password..." autocomplete="off" aria-label="Secret password" required>
+        <button class="button" type="submit">Unlock</button>
+      </form>
+      <p id="feedback" role="status" aria-live="polite"></p>
+      <button id="next-button" class="button" type="button" disabled>Next page →</button>
+      <p class="small-note">hanya untuk anan imut</p>
+    </main>
+  </section>
 
-    <!-- MUSIC -->
+  <section class="screen hidden" id="love-screen" aria-label="A little love page">
+    <div class="love-field" id="love-field" aria-hidden="true"></div>
+    <main class="love-card">
+      <span class="heart-mark" aria-hidden="true">♡</span>
+      <h2>Ha sabaq sat !</h2>
+      <p>saja nak cakap, aku sayang hang HAHAHAH</p>
+      <a class="next-button" href="games.html">Next page <span aria-hidden="true">→</span></a>
+      <p class="tiny-note">dibuat oleh arisya dengan penuh kasih sayang</p>
+    </main>
+  </section>
 
-    <audio id="birthdaySong" loop>
-        <source src="music.m4a" type="audio/mp4">
-    </audio>
+  <script>
+    const correctPassword = '04-02-2026';
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('password');
+    const feedback = document.getElementById('feedback');
+    const nextButton = document.getElementById('next-button');
+    const entryScreen = document.getElementById('entry');
+    const loveScreen = document.getElementById('love-screen');
+    const loveField = document.getElementById('love-field');
 
+    passwordForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (passwordInput.value.trim() === correctPassword) {
+        feedback.textContent = 'YAY, BETULLL! unlocked ✨';
+        nextButton.disabled = false;
+        passwordInput.disabled = true;
+        passwordForm.querySelector('button').disabled = true;
+      } else {
+        feedback.textContent = 'Hehe salahh, cuba lagi!';
+        nextButton.disabled = true;
+        passwordInput.select();
+      }
+    });
 
-    <!-- =========================
-         PAGE 1 : OPENING
-    ========================== -->
+    nextButton.addEventListener('click', () => {
+      if (!nextButton.disabled) {
+        entryScreen.classList.add('hidden');
+        loveScreen.classList.remove('hidden');
+      }
+    });
 
-    <section class="page opening" id="opening">
-
-        <div class="flower flower-1">✿</div>
-        <div class="flower flower-2">✿</div>
-        <div class="flower flower-3">✧</div>
-        <div class="flower flower-4">✿</div>
-
-        <div class="opening-content">
-
-            <p class="small-intro">
-                a special letter for hanan
-            </p>
-
-            <div class="gift">
-                🎁
-            </div>
-
-            <h1>
-                HAI HANAN<br>
-                AKU ADA SOMETHING<br>
-                UNTUK HANG
-            </h1>
-
-            <p class="opening-text">
-                hadiah untuk hang,<br>
-                hope you like it !
-            </p>
-
-            <button onclick="openLetter()">
-                OPEN IT&nbsp; →
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         PAGE 2 : LETTER
-    ========================== -->
-
-    <section class="page letter" id="letter">
-
-        <div class="paper">
-
-            <div class="paper-tape"></div>
-
-            <p class="letter-date">
-                a special letter for hanan
-            </p>
-
-            <h1>
-                Dear Hanan
-            </h1>
-
-            <div class="line"></div>
-
-            <p>
-                Kita rapat tanpa sengaja, tapi aku bersyukur Allah temukan kita.
-                Aku bersyukur, Allah takdirkan aku pindah malik. Tanpa aku pindah,
-                kita mungkin tak jumpa kan? Even kita jumpa, kita tak rapat macam sekarang
-            </p>
-
-            <p>
-                Banyak benda yang kita dua lalui, macam macam kita kongsi dekat each other.
-                Aku pun tak ingat dah macam mana aku boleh tiba tiba rapat, 
-                cerita macam macam dekat hang
-            </p>
-
-            <p>
-                Aku bukan orang baik, kadang aku terlepas cakap.
-                Aku minta maaf kalau kadang hang geram dengan aku ka apa ka.
-                Aku harap hang tak pernah rasa yang aku ni jahat dengan hang. Aku suka kawan dengan hang !
-            </p>
-
-            <p>
-                Semoga kita sama-sama dapat result SPM
-                yang kita harapkan dan dapat sambung
-                belajar dekat tempat yang terbaik untuk kita.
-            </p>
-
-            <p>
-                Jangan disebabkan orang lain, hang berubah tauu dan jangan lupa aku bila kita dah ikut haluan masing-masingg.
-                Cita pasai aku kat anak anak hang dengan Iqbal, EH?
-            </p>
-
-            <p class="last-line">
-                Lastly, aku nak ucap terima kasih sebab selalu ada untuk. Aku sayang hang, Hanan.
-            </p>
-
-            <div class="signature">
-                — ari
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <script src="script.js"></script>
-
+    const phrases = ['love','love you','cayang anan','♡','love, love, love','for hanann','anan gemesh','sayang hang','thankyou !'];
+    const count = 34;
+    for (let i = 0; i < count; i++) {
+      const word = document.createElement('span');
+      word.className = 'floating-word';
+      word.textContent = phrases[i % phrases.length];
+      word.style.left = `${Math.random() * 100}%`;
+      word.style.top = `${Math.random() * 100}%`;
+      word.style.fontSize = `${12 + Math.random() * 25}px`;
+      word.style.setProperty('--opacity', `${0.13 + Math.random() * 0.42}`);
+      word.style.setProperty('--duration', `${8 + Math.random() * 12}s`);
+      word.style.setProperty('--delay', `${Math.random() * -12}s`);
+      word.style.setProperty('--rotation', `${-18 + Math.random() * 36}deg`);
+      if (i % 4 === 0) word.style.color = '#ff557e';
+      if (i % 5 === 0) word.style.color = '#ffd0e3';
+      loveField.appendChild(word);
+    }
+  </script>
 </body>
-
 </html>
